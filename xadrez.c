@@ -47,17 +47,16 @@ int main() {
     //Loop for pro movimento vertical;
     for(c = 0; c < 2; c++){
 
-    printf("Casa %d: Baixo\n", c + 1);
+    printf("Casa %d: Cima\n", c + 1);
 
     if(c == 1){
         e = 0;
         
         do{
-            printf("Casa %d: Esquerda\n", c + e + 2);
+            printf("Casa %d: Direita\n", c + e + 2);
             e++;
         }while( e < 1);
     }
 }
-
     return 0;
 }
