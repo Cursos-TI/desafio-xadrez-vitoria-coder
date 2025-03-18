@@ -9,6 +9,7 @@ int main() {
    char torre[10] = "Torre";
    char bispo[10] = "Bispo";
    char rainha[10] = "Rainha";
+   char cavalo[10] = "Cavalo";
 
 
 //Movimento da Torre usando for;
@@ -38,12 +39,25 @@ int main() {
     }while(r < 8 );
 
 
+//Movimento do Cavalo usando, Estrutura aninhada(for, do-While);
 
+    printf("\nMovimento do %s por 2 casas verticais e um movimento horizontal:\n", cavalo);
+    int c, e;    //Declaração de váriaveis;
 
+    //Loop for pro movimento vertical;
+    for(c = 0; c < 2; c++){
 
+    printf("Casa %d: Baixo\n", c + 1);
 
-
-
+    if(c == 1){
+        e = 0;
+        
+        do{
+            printf("Casa %d: Esquerda\n", c + e + 2);
+            e++;
+        }while( e < 1);
+    }
+}
 
     return 0;
 }
