@@ -12,7 +12,7 @@ int main() {
    char cavalo[10] = "Cavalo";
 
 
-//Movimento da Torre usando for;
+//Movimento da Torre usando a estrutura de repetição for;
    printf("Movimento da %s por 5 casas:\n", torre);
    int t;                              //Contador int pra simular o movimento da Torre;
    for(t = 0; t < 5; t++){
@@ -20,7 +20,7 @@ int main() {
    }
 
 
-//Movimento do Bispo usando While;     
+//Movimento do Bispo usando a estrutura de repetição While;     
 
     printf("\nMovimento do %s por 5 casas na Diagonal (Cima, Direita):\n", bispo);
     int b = 0;                               //Contador int pra simular o movimento do Bispo;
@@ -29,7 +29,7 @@ int main() {
         b++;
     }
 
-//Movimento da Rainha usando do-Whilee;
+//Movimento da Rainha usando a estrutura de repetição do-Whilee;
 
     printf("\nMovimento da %s por 8 casas para a esquerda:\n", rainha);
     int r = 0;                              //Contador int pra simular o movimento da Rainha;
@@ -39,12 +39,12 @@ int main() {
     }while(r < 8 );
 
 
-//Movimento do Cavalo usando, Estrutura aninhada(for, do-While);
+//Movimento do Cavalo usando, loop aninhada(for, do-While);
 
     printf("\nMovimento do %s por 2 casas verticais e um movimento horizontal:\n", cavalo);
     int c, e;    //Declaração de váriaveis;
 
-    //Loop for pro movimento vertical;
+    //Loop for pro movimento vertical do cavalo;
     for(c = 0; c < 2; c++){
 
     printf("Casa %d: Cima\n", c + 1);
