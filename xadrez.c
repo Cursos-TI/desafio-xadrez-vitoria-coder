@@ -29,7 +29,7 @@ int main() {
         b++;
     }
 
-//Movimento da Rainha usando do-While;
+//Movimento da Rainha usando do-Whilee;
 
     printf("\nMovimento da %s por 8 casas para a esquerda:\n", rainha);
     int r = 0;                              //Contador int pra simular o movimento da Rainha;
