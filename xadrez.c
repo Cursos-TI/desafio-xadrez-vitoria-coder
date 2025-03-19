@@ -6,12 +6,14 @@
 
 
 //Declarações das funções recursivas pros movimentos das peças;
+
+//movimento da Torre;
 void moveTorre(int casa){
     if(casa == 0) return;
     printf("Mover 1 casa pra direita\n");
     moveTorre(casa - 1);
 }
-
+//movimento do Bispo;
 void moveBispo(int casa){
     if(casa == 0) return;
     for(int i = 0; i < casa; i++){
@@ -21,13 +23,14 @@ void moveBispo(int casa){
     }
     moveBispo(casa -1);
 }
-
+//movimento da Rainha;
 void moveRainha(int casa){
     if(casa == 0) return;
     printf("Mover 1 casa pra direita\n");
     moveRainha(casa -1);
 }
 
+//movimento do Cavalo;
 void movimentoCavalo(int movimento){
     for (int i = 0; i < movimento; i++){
         for (int j = 0; j < 2; j++){
