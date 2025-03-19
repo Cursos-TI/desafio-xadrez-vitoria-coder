@@ -3,60 +3,71 @@
 // Desafio de Xadrez - MateCheck
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
-int main() {
-
-//Declaraçõs das váriaveis de identificação das peças;
-   char torre[10] = "Torre";
-   char bispo[10] = "Bispo";
-   char rainha[10] = "Rainha";
-   char cavalo[10] = "Cavalo";
 
 
-//Movimento da Torre usando a estrutura de repetição for;
-   printf("Movimento da %s por 5 casas:\n", torre);
-   int t;                              //Contador int pra simular o movimento da Torre;
-   for(t = 0; t < 5; t++){
-        printf("Casa %d: Direita\n", t +1);
-   }
+//Declarações das funções recursivas pros movimentos das peças;
+void moveTorre(int casa){
+    if(casa == 0) return;
+    printf("Mover 1 casa pra direita\n");
+    moveTorre(casa - 1);
+}
 
-
-//Movimento do Bispo usando a estrutura de repetição While;     
-
-    printf("\nMovimento do %s por 5 casas na Diagonal (Cima, Direita):\n", bispo);
-    int b = 0;                               //Contador int pra simular o movimento do Bispo;
-    while(b < 5){
-        printf("Casa %d: Cima, Direita\n", b+1);
-        b++;
+void moveBispo(int casa){
+    if(casa == 0) return;
+    for(int i = 0; i < casa; i++){
+        for(int j = 0; j < casa; j++){
+            printf("Mover 1 casa na diagonal superior direita\n");
+        }
     }
+    moveBispo(casa -1);
+}
 
-//Movimento da Rainha usando a estrutura de repetição do-Whilee;
+void moveRainha(int casa){
+    if(casa == 0) return;
+    printf("Mover 1 casa pra direita\n");
+    moveRainha(casa -1);
+}
 
-    printf("\nMovimento da %s por 8 casas para a esquerda:\n", rainha);
-    int r = 0;                              //Contador int pra simular o movimento da Rainha;
-    do{
-        printf("Casa %d: Esquerda\n", r + 1);
-        r++;
-    }while(r < 8 );
+void movimentoCavalo(int movimento){
+    for (int i = 0; i < movimento; i++){
+        for (int j = 0; j < 2; j++){
+            printf("Mover 1 casa pra cima\n");
+            if(j == 1) break;               ///após mover as duas casas interrompe o loop;
+        }
 
-
-//Movimento do Cavalo usando, loop aninhada(for, do-While);
-
-    printf("\nMovimento do %s por 2 casas verticais e um movimento horizontal:\n", cavalo);
-    int c, e;    //Declaração de váriaveis;
-
-    //Loop for pro movimento vertical do cavalo;
-    for(c = 0; c < 2; c++){
-
-    printf("Casa %d: Cima\n", c + 1);
-
-    if(c == 1){
-        e = 0;
-        
-        do{
-            printf("Casa %d: Direita\n", c + e + 2);
-            e++;
-        }while( e < 1);
+        printf("Mover 1 casa pra direita\n");
+        continue;   //continua pro próximo movimento;
     }
 }
+
+int main() {
+
+
+//Números de casas que cada peça deve se movimentar;
+
+    int casaTorre = 3;
+    int casaBispo = 3;
+    int casaRainha = 3;
+    int movimentosCavalo = 2;
+
+    printf("Movimento da Torre:\n");
+    moveTorre(casaTorre);
+    printf("\n");
+
+    printf("Movimnto do Bispo:\n");
+    moveBispo(casaBispo);
+    printf("\n");
+
+    printf("Movimento da Rainha:\n");
+    moveRainha(casaRainha);
+    printf("\n");
+
+    printf("Movimento do Cavalo:\n");
+    movimentoCavalo(movimentosCavalo);
+    printf("\n");
+
+
+
+
     return 0;
 }
